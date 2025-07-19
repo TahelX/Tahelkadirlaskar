@@ -1,275 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tahel Kadir Laskar - Portfolio</title>
-
-  <style>
-    /* --- Kinetic Loader Styles --- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body.loader-active {
-      height: 100vh;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #0d0d0d;
-    }
-
-    .kinetic {
-      position: relative;
-      width: 100px;
-      height: 100px;
-    }
-
-    .kinetic::before,
-    .kinetic::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100px;
-      height: 100px;
-      border: 5px solid #00aaff;
-      border-radius: 50%;
-      animation: rotate 2s linear infinite;
-    }
-
-    .kinetic::after {
-      border-color: #ffaa00;
-      animation-direction: reverse;
-    }
-
-    @keyframes rotate {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-
-    /* --- Main Content Styles --- */
-    .hidden {
-      display: none;
-    }
-
-    .main-content {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9f9f9;
-      color: #111;
-      padding: 40px 20px;
-    }
-
-    header {
-      background: #fff;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    nav a {
-      margin-left: 25px;
-      font-weight: 500;
-      color: #333;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #007bff;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 100px 20px;
-      background: #111;
-      color: #fff;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      color: #ccc;
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      border-left: 4px solid #007bff;
-      padding-left: 15px;
-    }
-
-    section {
-      margin-bottom: 80px;
-    }
-
-    .skills-grid,
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: #fff;
-      border: 1px solid #e1e1e1;
-      padding: 20px;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-    }
-
-    .card:hover {
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      transform: translateY(-5px);
-    }
-
-    .contact {
-      background: #111;
-      color: #fff;
-      text-align: center;
-      padding: 60px 20px;
-    }
-
-    .contact a {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 25px;
-      background: #007bff;
-      color: #fff;
-      border-radius: 5px;
-      transition: background 0.3s ease;
-      text-decoration: none;
-    }
-
-    .contact a:hover {
-      background: #0056b3;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #666;
-      padding: 20px 0;
-      border-top: 1px solid #eaeaea;
-    }
-
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-
-      .hero p {
-        font-size: 1rem;
-      }
-
-      nav a {
-        margin-left: 15px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Folio - Visual Designer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="loader-active">
-  
-  <!-- Kinetic Loader -->
-  <div class="kinetic"></div>
-
-  <!-- Main Site Content (hidden until loader finishes) -->
-  <div class="main-content hidden">
-    <!-- Header -->
-    <header>
-      <div class="logo"><strong>Tahel Kadir Laskar</strong></div>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
-
-    <!-- Hero -->
-    <section class="hero">
-      <h1>Hi, I'm Tahel</h1>
-      <p>A Civil Engineering diploma student with skills in HTML, CSS, and Pine Script</p>
-    </section>
+<body>
 
     <div class="container">
-
-      <!-- About -->
-      <section id="about">
-        <h2>About Me</h2>
-        <p>
-          I am pursuing a Diploma in Civil Engineering from Hailakandi Polytechnic. Apart from structural design and core civil knowledge, I enjoy coding and building digital projects. I work with HTML, CSS, and Pine Script to automate and design useful tools. I believe in combining real-world logic with digital creativity.
-        </p>
-      </section>
-
-      <!-- Skills -->
-      <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-          <div class="card">HTML5</div>
-          <div class="card">CSS3</div>
-          <div class="card">Pine Script</div>
-          <div class="card">TradingView Automation</div>
-          <div class="card">Responsive Design</div>
-          <div class="card">Civil Drafting Basics</div>
-        </div>
-      </section>
-
-      <!-- Projects -->
-      <section id="projects">
-        <h2>Projects</h2>
-        <div class="projects-grid">
-          <div class="card">
-            <h3>📌 Portfolio Website</h3>
-            <p>A personal website built with HTML and CSS to showcase my skills and projects. Responsive and clean UI.</p>
-          </div>
-          <div class="card">
-            <h3>📈 RSI Trading Bot</h3>
-            <p>Custom Pine Script strategy using RSI for automated trading on TradingView platform.</p>
-          </div>
-        </div>
-      </section>
+        <header>
+            <div class="logo">FOLIO.</div>
+            <nav>
+                <a href="#">Dribbble</a>
+                <a href="#">Instagram</a>
+            </nav>
+            <div class="menu-icon">
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </header>
     </div>
 
-    <!-- Contact -->
-    <section id="contact" class="contact">
-      <h2>Contact Me</h2>
-      <p>If you’d like to collaborate, hire me, or just say hello, feel free to reach out.</p>
-      <a href="mailto:tahel@example.com">Send Email</a>
-    </section>
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <p class="intro-text">Jack Gross</p>
+                <h1>Hello, my name's Jack. I'm a Visual Designer.</h1>
+                <div class="scroll-down">
+                    <span>&#x2195;</span> Scroll down
+                </div>
+            </div>
+            <div class="hero-graphic">
+                </div>
+        </section>
 
-    <!-- Footer -->
-    <footer>
-      &copy; 2025 Tahel Kadir Laskar. All rights reserved.
-    </footer>
-  </div>
+        <section class="what-i-do-section">
+            <div class="container">
+                <div class="section-intro">
+                    <p>What I Do</p>
+                    <h2>I enjoy creating delightful, human-centered digital experiences.</h2>
+                </div>
+                <div class="large-text">
+                    <p>Think.</p>
+                    <p>Make.</p>
+                    <p>Solve.</p>
+                </div>
+                <a href="#" class="btn btn-primary">Contact Me &rarr;</a>
+            </div>
+        </section>
 
-  <!-- JavaScript to handle loader -->
-  <script>
-    // Simulate loading (2 seconds), then show main content
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        document.querySelector('.kinetic').style.display = 'none';
-        document.body.classList.remove('loader-active');
-        document.querySelector('.main-content').classList.remove('hidden');
-      }, 2000); // Adjust time as needed
-    });
-  </script>
+        <section class="services-section">
+            <div class="container">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon icon-ui"></div>
+                        <h3>User Interface</h3>
+                        <p>We have got quite a few already made templates for better project management that you can use now.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon icon-ux"></div>
+                        <h3>User Experience</h3>
+                        <p>We have got quite a few already made templates for better project management that you can use now.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon icon-kit"></div>
+                        <h3>UI Design Kit</h3>
+                        <p>We have got quite a few already made templates for better project management that you can use now.</p>
+                    </div>
+                </div>
+                <div class="services-footer">
+                    <a href="#" class="btn btn-secondary">Find out more</a>
+                </div>
+                 <div class="pagination-footer">
+                    <span>01 / 02</span>
+                    <a href="#">Contact me</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="art-direction-section">
+            <div class="art-direction-content">
+                <p class="intro-text">Who I Work With</p>
+                <h2>Art Direction for Global Leading Brands.</h2>
+                <p>I research and create breakthrough - delightful ideas, leading visual designers.</p>
+                <div class="scroll-down">
+                    <span>&#x2195;</span> Scroll down
+                </div>
+            </div>
+            <div class="art-direction-graphic">
+                 </div>
+        </section>
+    </main>
+
 </body>
 </html>
